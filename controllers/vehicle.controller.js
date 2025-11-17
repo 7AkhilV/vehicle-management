@@ -56,7 +56,9 @@ export const getVehicleById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const vehicle = await Vehicle.findById(id).populate('assignedTo', 'name email');
+    const vehicle = await Vehicle.findById(id)
+      .populate('assignedTo', 'name email')
+      .populate('assignmentHistory.userId', 'name email');
 
     if (!vehicle) {
       return res.status(404).json({
