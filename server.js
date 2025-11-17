@@ -7,10 +7,12 @@ connectDB();
 
 // Start server
 const PORT = env.PORT || 3000;
+const HOST = '0.0.0.0';
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server is running on http://${HOST}:${PORT}`);
   console.log(`Environment: ${env.NODE_ENV || 'development'}`);
+  console.log(`Access via: http://localhost:${PORT} or http://YOUR_IP:${PORT}`);
 });
 
 // Handle unhandled promise rejections
