@@ -74,7 +74,7 @@ npm install
 
 3. **Setup environment variables**
 ```bash
-cp .env.example .env
+touch .env
 ```
 
 Edit `.env` and configure:
